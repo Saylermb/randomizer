@@ -13,9 +13,10 @@ setup(
     packages=['randomizer'],
     url='',
     license='',
-    author='saylermb',
+    author='Saylermb',
     author_email='Saylermb@gmail.com',
     description='',
     install_requires=['numpy',],
     long_description=long_description,
+    python_requires='>3.6.2'
 )
