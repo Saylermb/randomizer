@@ -9,7 +9,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name='randomizer',
-    version='0.10',
+    version='0.11',
     packages=['randomizer'],
     url='',
     license='',

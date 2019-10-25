@@ -7,6 +7,51 @@ from datetime import datetime, timedelta
 
 class Randomizer(unittest.TestCase):
     test_array = [1, [2], 3, 5, [[54]], 43, 'awda', False, b'123']
+    rand = Randomize([1, 3, 1, 4, 5, 6, 7, 232, 43, 54, -1, -277])
+    rand_text = Randomize('test test1 test2 test3')
+    rand_texts = Randomize(['test', 'test1', 'test2', 'test3'])
+
+    def _test_randomize_int(self):
+        int_ = self.rand.element()
+        group_int = self.rand.group_elements(100)
+        ints_ = self.rand.elements(100)
+        self.assertIsInstance(int_, int)
+        self.assertIn(int_, self.rand)
+        self.assertIsInstance(group_int, str)
+        self.assertIsInstance(ints_, list)
+        self.assertEqual(len(ints_), 100)
+
+    def test_randomize_int(self):
+        [self._test_randomize_int() for _ in range(100)]
+
+    def _test_randomize_text(self):
+        text_ = self.rand_text.element()
+        group_text = self.rand_text.group_elements(100)
+        texts_ = self.rand_text.elements(100)
+        self.assertIsInstance(text_, str)
+        self.assertIn(text_, self.rand_text)
+        self.assertEqual(len(text_), 1)
+        self.assertIsInstance(group_text, str)
+        self.assertGreater(len(group_text), 100)
+        self.assertIsInstance(texts_, list)
+        self.assertEqual(len(texts_), 100)
+
+    def test_randomize_text(self):
+        [self._test_randomize_text() for _ in range(100)]
+
+    def _test_randomize_texts(self):
+        text_ = self.rand_texts.element()
+        group_text = self.rand_texts.group_elements(100)
+        texts_ = self.rand_texts.elements(100)
+        self.assertIsInstance(text_, str)
+        self.assertIn(text_, self.rand_texts)
+        self.assertIsInstance(group_text, str)
+        self.assertEqual(len(group_text.split(' ')), 100)
+        self.assertIsInstance(texts_, list)
+        self.assertEqual(len(texts_), 100)
+
+    def test_randomize_texts(self):
+        [self._test_randomize_texts() for _ in range(100)]
 
     def _test_random_text_unicode(self):
         text = random_text_unicode(100)
