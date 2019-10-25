@@ -179,3 +179,6 @@ class Partial(unittest.TestCase):
 
     def test_random_bigint(self):
         [self._test_random_bigint() for _ in range(10000)]
+
+if __name__ == '__main__':
+    unittest.main()
