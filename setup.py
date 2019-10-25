@@ -2,14 +2,15 @@ try:
     from setuptools import setup
 except ImportError:
     raise ImportError(
-        "setuptools module required, please go to https://pypi.python.org/pypi/setuptools and follow the instructions for installing setuptools")
+        "setuptools module required, please go to "
+        "https://pypi.python.org/pypi/setuptools and follow the instructions for installing setuptools")
 
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
     name='randomizer',
-    version='0.14',
+    version='0.15',
     packages=['randomizer', ],
     url='https://github.com/Saylermb/randomizer',
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
