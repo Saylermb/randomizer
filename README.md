@@ -23,11 +23,11 @@ r.pop(0) # -> 'try'
 #### random_text_unicode
 Generates random strings with unicode symbol.
 
- *param size* size of returned text
+ *param size*: size of returned text
  
- *param random_size* if True, return random size [0*size]
+ *param random_size*: if True, return random size [0*size]
  
- *return* unicode text
+ *return*: unicode text
 
 ```python
 random_text_unicode(10)  # -> 'aT݃пޑ0սYׅa
@@ -38,11 +38,11 @@ random_text_unicode(10, random_size=True)  # -> 'ɘ0ͯłƏ'
 
 Generates random strings.
 
- *param size* size of returned text
+ *param size*: size of returned text
  
- *param random_size* if True, return random size [0*size]
+ *param random_size*: if True, return random size [0:size]
  
- *return* text
+ *return*: text
 
 
 ```python
@@ -53,22 +53,22 @@ random_text(10, random_size=True)  # -> 'RПkF'
  
 #### random_float
 
- *param a* start digit
+ *param a*: start digit
  
- *param b* end digit
+ *param b*: end digit
  
- *return* random float with 14 digit after coma
+ *return*: random float with 14 digit after coma
 
 ```python
 random_float(1.1, 2.2) # -> 1.4524252884290065
 ```
 #### random_datetime
 
- *param a* start datetime
+ *param a*: start datetime
  
- *param b* end datetime
+ *param b*: end datetime
  
- *return* random datetime with timezone of 'a' parameter
+ *return*: random datetime with timezone of 'a' parameter
 
 ```python
 random_datetime(datetime(2007,1,2,3,4,5), datetime.now())
@@ -76,23 +76,23 @@ random_datetime(datetime(2007,1,2,3,4,5), datetime.now())
 ```
 #### random_list_element
 
- *param array* list of elements
+ *param array*: list of elements
  
- *return* random element of array
+ *return*: random element of array
 
 ```python
 random_list_element([1,2,3,4,5]) # -> 4 
 ```
 #### random_bool
 
- *return* return random bool value
+ *return*: return random bool value
 
 ```python
 random_bool() # -> True
 ```
 #### random_unix_time
 
- *return* a float value from 0 to the current time with 7 digit after coma
+ *return*: a float value from 0 to the current time with 7 digit after coma
 
 ```python
 random_unix_time() # -> 785009993.9438592
@@ -100,16 +100,16 @@ random_unix_time() # -> 785009993.9438592
  
 #### random_dt_now
 
- *return* a datetime object from 1.1.1980 to the current datetime without timezone
+ *return*: a datetime object from 1.1.1980 to the current datetime without timezone
 
 ```python
 random_dt_now() # -> datetime.datetime(1986, 4, 23, 3, 46, 12, 133432)
 ```
 #### random_positive_float
 
- *param max_value* maximum value
+ *param max_value*: maximum value
  
- *return* random positive float with 14 digit after come
+ *return*: random positive float with 14 digit after come
 
 ```python
 random_positive_float(1.123) # -> 0.6647791533497713
