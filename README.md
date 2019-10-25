@@ -4,6 +4,22 @@ Liberty for generate random data.
 
 ### Docs 
 
+
+
+#### Randomize
+Class for create custom random list.
+
+```python
+r = Randomize(['try', 'this', 'class'])
+r.element() # -> 'class'
+r.elements(3) #  ['this', 'try', 'try']
+r.group_elements(2)  # -> 'try class' 
+# pop del rundom element and return him
+r.pop() # -> 'this'
+# if pass index number, pop will be used as list.pop () 
+r.pop(0) # -> 'try'
+```
+
 #### random_text_unicode
 Generates random strings with unicode symbol.
 
@@ -134,3 +150,5 @@ random_int() # -> -1572638799
 ```python
 random_bigint() # -> -475732340272717339
 ```
+
+

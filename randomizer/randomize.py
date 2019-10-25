@@ -2,6 +2,9 @@ from datetime import datetime
 from random import randint
 from numpy import random
 
+__all__ = ['Randomize', 'random_text_unicode', 'random_text', 'random_float',
+           'random_datetime', 'random_list_element', 'random_bool']
+
 VAL_UNICOD = """'\x01\x02\x03\x04\x05\x06\x07\x08\x0e\x0f\x10
 \x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d
 \x1e\x1f!"#$%&\'()*+,-./0123456789:;<=>?
@@ -61,8 +64,41 @@ jШиAm3wWЪДCɑнИЧnbsЙEГ9фkюFXЁЫDыйцeхR4-М
 
 VAL_LEN = len(VAL) - 1
 
-__all__ = ['random_text_unicode', 'random_text', 'random_float',
-           'random_datetime', 'random_list_element', 'random_bool']
+
+class Randomize(list):
+
+    def element(self):
+        """:return random element of self"""
+        return self[randint(0, len(self) - 1)]
+
+    def elements(self, count: int):
+        """:return list of random elements of self"""
+        return [self.element() for _ in range(count)]
+
+    def group_elements(self, count: int):
+        """:return concat string of random elements list
+            >>> s = Randomize([1,2,4,5])
+            >>>example: s.group_elements(2)
+            <<< '1 5'
+        """
+        elem = self.elements(count)
+        return self._group(elem)
+
+    @staticmethod
+    def _group(iterable):
+        return ' '.join([str(s) for s in iterable])
+
+    def pop(self, index: int = None):
+        """
+        pop del rundom element and return him.
+        if pass index number, pop will be used as list.pop
+        :param index:
+        :return:
+        """
+        if None:
+            return super().pop(randint(0, len(self)))
+        else:
+            return super().pop(-1)
 
 
 def random_text_unicode(size: int = 1, random_size=False) -> str:
