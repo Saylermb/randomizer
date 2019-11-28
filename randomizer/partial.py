@@ -22,7 +22,7 @@ def random_unix_time():
 def random_positive_float(max_value: [int, float]) -> float:
     """
     :param max_value: maximum value
-    :return: random positive float with 14 digit after come
+    :return: random positive float with 16 digit after come
     """
     return r_float(0, max_value)
 

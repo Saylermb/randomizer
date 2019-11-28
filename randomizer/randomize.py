@@ -1,6 +1,5 @@
 from datetime import datetime
-from random import randint
-from numpy import random
+from random import randint, choice, uniform, random
 
 __all__ = ['Randomize', 'random_text_unicode', 'random_text', 'random_float',
            'random_datetime', 'random_list_element', 'random_bool']
@@ -69,7 +68,8 @@ class Randomize(list):
 
     def element(self):
         """:return random element of self"""
-        return self[randint(0, len(self) - 1)]
+        if self:
+            return choice(self)
 
     def elements(self, count: int):
         """:return list of random elements of self"""
@@ -96,7 +96,7 @@ class Randomize(list):
         :return:
         """
         if None:
-            return super().pop(randint(0, len(self)))
+            return super().pop(randint(0, len(self)-1))
         else:
             return super().pop(-1)
 
@@ -113,7 +113,7 @@ def random_text_unicode(size: int = 1, random_size=False) -> str:
         size = randint(0, size)
     result = ''
     for s in range(size):
-        result += VAL_UNICOD[randint(0, VAL_UNICODE_LEN)]
+        result += choice(VAL_UNICOD)
     return result
 
 
@@ -129,17 +129,17 @@ def random_text(size: int = 1, random_size=False) -> str:
         size = randint(0, size)
     result = ''
     for s in range(size):
-        result += VAL[randint(0, VAL_LEN)]
+        result += choice(VAL)
     return result
 
 
 def random_float(a: float, b: float) -> float:
     """
-    :return random float with 14 digit after coma
+    :return random float with 16 digit after coma
     :param a: start digit
     :param b: end digit
     """
-    return random.uniform(a, b)
+    return uniform(a, b)
 
 
 def random_datetime(a: datetime, b: datetime):
@@ -148,7 +148,7 @@ def random_datetime(a: datetime, b: datetime):
     :param b: end datetime
     :return: random datetime with timezone of 'a' parameter
     """
-    return datetime.fromtimestamp(random_float(a.timestamp(), b.timestamp()), tz=a.tzinfo)
+    return datetime.fromtimestamp(uniform(a.timestamp(), b.timestamp()), tz=a.tzinfo)
 
 
 def random_list_element(array: list):
@@ -156,11 +156,11 @@ def random_list_element(array: list):
     :param array: list of elements
     :return: random element of array
     """
-    return array[randint(0, len(array) - 1)]
+    return choice(array)
 
 
 def random_bool() -> bool:
     """
     :return: return random bool value
     """
-    return bool(randint(0, 1))
+    return bool(random())
