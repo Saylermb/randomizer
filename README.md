@@ -52,7 +52,23 @@ from randomizer import random_text
 random_text(10)  # -> 'v 9е93кт1O'
 random_text(10, random_size=True)  # -> 'RПkF'
 ```
-  
+
+#### random_byte
+
+Generates random int with calculation random(2 ** size).
+
+ *param size*: size of returned int
+ 
+ *return*: int (int range 0 <= int < 2**size)
+
+
+```python
+from randomizer import random_byte
+random_byte(2)  # -> 3
+random_byte(8)  # -> '111'
+```
+
+
  
 #### random_float
 

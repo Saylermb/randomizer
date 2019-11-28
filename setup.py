@@ -10,7 +10,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name='randomizer',
-    version='0.20',
+    version='0.21',
     packages=['randomizer', ],
     url='https://github.com/Saylermb/randomizer',
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',

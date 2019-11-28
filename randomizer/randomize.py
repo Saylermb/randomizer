@@ -1,5 +1,5 @@
 from datetime import datetime
-from random import randint, choice, uniform, random
+from random import randint, choice, uniform, random, getrandbits
 
 __all__ = ['Randomize', 'random_text_unicode', 'random_text', 'random_float',
            'random_datetime', 'random_list_element', 'random_bool']
@@ -158,6 +158,14 @@ def random_list_element(array: list):
     """
     return choice(array)
 
+def random_byte(size:int)->int:
+    """
+
+    :param size: size of returned int
+    :return: int with calculation random(2 ** size)
+
+    """
+    return getrandbits(size)
 
 def random_bool() -> bool:
     """

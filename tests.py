@@ -110,6 +110,15 @@ class Randomizer(unittest.TestCase):
         self.assertTrue(True in test)
         self.assertTrue(False in test)
 
+    def _test_random_byte(self):
+        self.assertTrue(isinstance(random_byte(8), int))
+        self.assertTrue(isinstance(random_byte(4), int))
+        self.assertTrue(0 <= random_byte(8) < 256)
+        self.assertNotEqual(random_byte(2), 4)
+
+    def test_random_byte(self):
+        [self._test_random_byte() for _ in range(100)]
+
 
 class Partial(unittest.TestCase):
 
